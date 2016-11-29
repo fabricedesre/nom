@@ -133,7 +133,6 @@ pub use self::bits::*;
 pub use self::nom::*;
 pub use self::character::*;
 
-#[cfg(not(feature = "core"))]
 pub use self::whitespace::*;
 
 #[cfg(feature = "regexp")]
@@ -165,9 +164,7 @@ mod traits;
 #[macro_use] mod nom;
 #[macro_use] mod character;
 
-#[macro_use]
-#[cfg(not(feature = "core"))]
-pub mod whitespace;
+#[macro_use] mod whitespace;
 
 #[cfg(feature = "regexp")]
 #[macro_use] mod regexp;
