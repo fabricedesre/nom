@@ -15,13 +15,13 @@ use std::vec::Vec;
 use std::string::ToString;
 
 /// useful functions to calculate the offset between slices and show a hexdump of a slice
-#[cfg(not(feature = "core"))]
+// #[cfg(not(feature = "core"))]
 pub trait Offset {
   /// offset between the first byte of self and the first byte of the argument
   fn offset(&self, second:&Self) -> usize;
 }
 
-#[cfg(not(feature = "core"))]
+// #[cfg(not(feature = "core"))]
 pub trait HexDisplay {
   /// Converts the value of `self` to a hex dump, returning the owned
   /// string.
@@ -34,7 +34,7 @@ pub trait HexDisplay {
 
 static CHARS: &'static[u8] = b"0123456789abcdef";
 
-#[cfg(not(feature = "core"))]
+// #[cfg(not(feature = "core"))]
 impl Offset for [u8] {
   fn offset(&self, second:&[u8]) -> usize {
     let fst = self.as_ptr();
@@ -44,7 +44,7 @@ impl Offset for [u8] {
   }
 }
 
-#[cfg(not(feature = "core"))]
+// #[cfg(not(feature = "core"))]
 impl Offset for str {
     fn offset(&self, second: &Self) -> usize {
       let fst = self.as_ptr();
@@ -54,7 +54,7 @@ impl Offset for str {
     }
 }
 
-#[cfg(not(feature = "core"))]
+// #[cfg(not(feature = "core"))]
 impl HexDisplay for [u8] {
   #[allow(unused_variables)]
   fn to_hex(&self, chunk_size: usize) -> String {
