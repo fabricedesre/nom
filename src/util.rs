@@ -14,6 +14,9 @@ use std::prelude::v1::*;
 use std::vec::Vec;
 use std::string::ToString;
 
+#[cfg(feature = "core")]
+use collections::String;
+
 /// useful functions to calculate the offset between slices and show a hexdump of a slice
 // #[cfg(not(feature = "core"))]
 pub trait Offset {
