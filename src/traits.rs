@@ -342,7 +342,7 @@ impl<'a,'b> Compare<&'b[u8]> for &'a [u8] {
   }
 }
 
-#[cfg(not(feature = "core"))]
+// #[cfg(not(feature = "core"))]
 impl<'a,'b> Compare<&'b str> for &'a [u8] {
   #[inline(always)]
   fn compare(&self, t: &'b str) -> CompareResult {
@@ -354,7 +354,7 @@ impl<'a,'b> Compare<&'b str> for &'a [u8] {
   }
 }
 
-#[cfg(not(feature = "core"))]
+// #[cfg(not(feature = "core"))]
 impl<'a,'b> Compare<&'b str> for &'a str {
   #[inline(always)]
   fn compare(&self, t: &'b str) -> CompareResult {
