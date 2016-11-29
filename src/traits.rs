@@ -24,7 +24,7 @@ impl<'a, T> InputLength for &'a[T] {
   }
 }
 
-#[cfg(not(feature = "core"))]
+//#[cfg(not(feature = "core"))]
 impl<'a> InputLength for &'a str {
   #[inline]
   fn input_len(&self) -> usize {
