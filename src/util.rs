@@ -54,7 +54,7 @@ impl Offset for str {
     }
 }
 
-// #[cfg(not(feature = "core"))]
+#[cfg(not(feature = "core"))]
 impl HexDisplay for [u8] {
   #[allow(unused_variables)]
   fn to_hex(&self, chunk_size: usize) -> String {
